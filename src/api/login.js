@@ -7,7 +7,7 @@ import axios from "@/utils/request.js"
 
 
 //获取验证码
-export const get_code = (data) => {
+export const get_code = (data) => {//post用method，get用method
     // console.log(process.env.NODE_ENV)
     return axios.request({
         method: "post", //post请求
@@ -23,32 +23,22 @@ export const get_code = (data) => {
     })
 }
 
-
-// export const get_code = (data) => {
-//     // 系统默认的环境变量
-//     console.log(process.env.NODE_ENV)
-//     return axios.request({
-//         method: 'get',
-//         url: '/user/123456',
-//         params: {
-
-//             firstName: 'Fred',
-//             lastName: 'Flintstone'
-//         }
-
-//     })
-// }
-
-
-
-// export const get_code = (method, data) => {
-//     Axios.request({
-//         method: method,
-//         url: '/user/12345',
-//         data: data
-//     })
-// }
-
 // 登录
+  
+export const do_login = (data)=>{
+    return axios.request({
+        method:'post',
+        url:'/login/',
+        data:data
+    })
+}
+
 // 注册
+export const do_registor = (data)=>{
+    return axios.request({
+        method:'post',
+        url:'/register/',
+        data:data
+    })
+}
 

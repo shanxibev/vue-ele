@@ -40,13 +40,13 @@ module.exports = {
         port: 8080,//端口
         open: true, //启动项目打开浏览器
         proxy: {// 代理
-        bugLevel:'debug',//打印node代理的日志
+        // bugRevel:'debug'//打印node代理的日志
             // http://localhost:8010/api/getSms
             // http://www.web-jshtml.cn/productapi/
             // http://www.web-jshtml.cn/productapi/api/getSms
             '/api': {//以/api开头的都需要代理
                 // 启动的目标服务器
-                target: 'http://www.web-jshtml.cn/productapi/',// http://localhost:8010/api/getSms  目标接口
+                target: 'http://www.web-jshtml.cn/productapi/token/',// http://localhost:8010/api/getSms  目标接口
                 // changeOrigin: true,  //是否跨域 自动生成一个localhost:8010 端口，域名下的node服务器，帮忙做代理
                 pathRewrite: {// 重新 url
                     '^/api': ''

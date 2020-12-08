@@ -31,15 +31,13 @@ http.interceptors.request.use(function (config) {
 // 添加响应拦截器
 http.interceptors.response.use(function (response) {
 
-    console.log(response);//响应数据
+    //console.log(response);//响应数据
     // 对响应数据做点什么 对数据进行过滤
     if (response.data.resCode != 0) {//resCode:可以进行约定，与后台相关
         // 提示服务器返回的信息
-        // console.log(response)
         Message.error(response.data.message) //提示邮箱不能为空！！
         return Promise.reject(error);//把错误信息复制一份，执行错误操作
     }
-
     return response;//当解决邮箱不能为空时，按成功走
 }, function (error) {
     // 对响应错误做点什么
